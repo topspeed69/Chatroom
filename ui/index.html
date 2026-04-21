@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chatroom</title>
+  <link rel="stylesheet" href="./global.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="app-header">
+      <div>
+        <h1>Chatroom</h1>
+        <p class="subtitle">Join the room and send real-time messages.</p>
+      </div>
+      <div class="status" id="status">Disconnected</div>
+    </header>
+
+    <main class="chat-card">
+      <section class="join-panel" id="joinPanel">
+        <div style="margin-bottom: 8px;">
+          <h2 style="margin:0 0 8px; font-weight: 500;">Welcome to Chatroom</h2>
+          <p style="margin:0; color:var(--muted); font-size:0.875rem;">Ready to join the conversation? Enter your name below to get started instantly.</p>
+        </div>
+        <label for="usernameInput">Enter your name</label>
+        <input id="usernameInput" type="text" placeholder="Your name" maxlength="24" autocomplete="off" />
+        <button id="joinButton" type="button">Join Chat</button>
+      </section>
+
+      <section class="chat-panel hidden" id="chatPanel">
+        <div class="predefined-questions" id="predefinedQuestions">
+          <button class="question-btn" data-question="What services do you offer?">What services do you offer?</button>
+          <button class="question-btn" data-question="How can I get help?">How can I get help?</button>
+          <button class="question-btn" data-question="What are your hours?">What are your hours?</button>
+          <button class="question-btn" data-question="How do I contact support?">How do I contact support?</button>
+        </div>
+
+        <div class="chat-log" id="chatLog" aria-live="polite"></div>
+
+        <form class="message-form" id="messageForm">
+          <button id="uploadBtn" type="button" class="upload-button" aria-label="Upload image">+</button>
+          <input id="imageInput" type="file" accept="image/*" hidden />
+          <input id="messageInput" type="text" placeholder="Type a message..." autocomplete="off" maxlength="250" />
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
