@@ -73,6 +73,18 @@ def save_image_message(username: str, filename: str, url: str, compression_info:
     return save_message(username, content=f"Uploaded image: {filename}", msg_type="image", extra_data=json.dumps(extra))
 
 
+def save_audio_message(username: str, filename: str, url: str, original_url: str, audio_info: dict) -> Message:
+    """Insert a new audio message into the database."""
+    import json
+    extra = {
+        "url": url,
+        "original_url": original_url,
+        "filename": filename,
+        "audio_info": audio_info
+    }
+    return save_message(username, content=f"Uploaded audio: {filename}", msg_type="audio", extra_data=json.dumps(extra))
+
+
 def get_messages_since(since: datetime) -> List[Message]:
     """Return all messages since a specific datetime."""
     with get_session() as session:

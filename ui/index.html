@@ -38,8 +38,10 @@
         <div class="chat-log" id="chatLog" aria-live="polite"></div>
 
         <form class="message-form" id="messageForm">
-          <button id="uploadBtn" type="button" class="upload-button" aria-label="Upload image">+</button>
+          <button id="uploadBtn" type="button" class="upload-button" aria-label="Upload image" title="Upload image">+</button>
           <input id="imageInput" type="file" accept="image/*" hidden />
+          <button id="audioUploadBtn" type="button" class="upload-button audio-upload-button" aria-label="Upload audio" title="Upload audio">&#9835;</button>
+          <input id="audioInput" type="file" accept="audio/*" hidden />
           <input id="messageInput" type="text" placeholder="Type a message..." autocomplete="off" maxlength="250" />
           <button type="submit">Send</button>
         </form>
